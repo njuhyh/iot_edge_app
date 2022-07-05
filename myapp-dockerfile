@@ -1,0 +1,27 @@
+#Version 1.0.0
+
+# 基础镜像来源
+# 如果不采用在镜像中编译源文件的方式，可以任意选择基础镜像
+FROM lycantropos/cmake
+
+# 创建镜像文件目录，并且授权
+RUN mkdir -p /opt/iot/edge/MyCApp/conf && chmod -R 777 /opt
+
+ENV docker_path=/opt/iot/edge/MyCApp
+ENV LD_LIBRARY_PATH=${docker_path}:$LD_LIBRARY_PATH
+
+WORKDIR ${docker_path}
+
+# 复制工程或文件到指定目录
+COPY MyCApp/MyCApp $docker_path
+
+# 将依赖库和配置文件放到对应目录下，确保编译的时候不会出错
+COPY MyCApp/lib /usr/lib
+COPY MyCApp/conf $docker_path/conf
+COPY MyCApp/start.sh $docker_path
+
+# 指定容器将要监听的端口
+USER root
+EXPOSE 8082
+
+ENTRYPOINT ["/bin/bash", "/opt/iot/edge/MyCApp/start.sh"]

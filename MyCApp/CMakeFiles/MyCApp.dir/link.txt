@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/MyCApp.dir/main.c.o  -o MyCApp  -L/home/hyh/module_test/MyCApp/./lib -Wl,-rpath,/home/hyh/module_test/MyCApp/./lib -lmodule -lcurl -ljson-c 

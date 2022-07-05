@@ -1,0 +1,3 @@
+/home/hyh/module_test/MyCApp/CMakeFiles/rebuild_cache.dir
+/home/hyh/module_test/MyCApp/CMakeFiles/MyCApp.dir
+/home/hyh/module_test/MyCApp/CMakeFiles/edit_cache.dir

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+./include/edge.h
+edge_error.h
+./include/edge_error.h
+edge_struct.h
+./include/edge_struct.h
+
+./include/edge_error.h
+
+./include/edge_struct.h
+
+/home/hyh/module_test/MyCApp/main.c
+edge.h
+/home/hyh/module_test/MyCApp/edge.h
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+curl/curl.h
+-
+json-c/json.h
+-
+
